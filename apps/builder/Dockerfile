@@ -11,7 +11,6 @@ WORKDIR /usr/src/app
 # Copy application dependency manifests to the container image.
 # A wildcard is used to ensure both package.json AND pnpm-lock.yaml are copied.
 COPY package*.json ./
-COPY pnpm-lock.yaml ./
 
 # Install dependencies using pnpm
 RUN pnpm install
