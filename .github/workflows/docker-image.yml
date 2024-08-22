@@ -32,9 +32,9 @@ jobs:
       # Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository_owner | tolower }}/typebot:latest 
+          docker build -t ghcr.io/tom-heldrix/typebot:latest .
 
       # Push the Docker image to GitHub Container Registry
       - name: Push Docker image
         run: |
-          docker push ghcr.io/${{ github.repository_owner }}/typebot:latest
+          docker push ghcr.io/tom-heldrix/typebot:latest
