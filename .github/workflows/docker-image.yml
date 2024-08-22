@@ -28,7 +28,7 @@ jobs:
         with:
           context: ./apps/builder
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/builder:latest
+          tags: ghcr.io/tom-heldrix/builder:latest
 
       - name: Post build info
         run: |
