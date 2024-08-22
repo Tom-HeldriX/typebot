@@ -21,10 +21,14 @@ jobs:
     - name: Clean npm cache
       run: npm cache clean --force
 
-    - name: Install pnpm using pnpm/action-setup
-      uses: pnpm/action-setup@v2.2.4
-      with:
-        version: 9.5.0
+    - name: Install Node.js using nvm
+      run: |
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
+        . ~/.nvm/nvm.sh
+        nvm install 18
+        nvm use 18
+        npm install -g pnpm@9.5.0
+        pnpm install
 
     - name: Install dependencies using pnpm
       run: |
