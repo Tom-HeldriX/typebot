@@ -16,13 +16,17 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '18.x'  # Specify the Node.js version used by Typebot
+        node-version: '18.x'  # Ensure you're using a compatible Node.js version
+        cache: 'pnpm'
 
-    - name: Install dependencies
-      run: npm install
+    - name: Install pnpm
+      run: npm install -g pnpm@9.5.0  # Ensures pnpm is installed
+
+    - name: Install dependencies using pnpm
+      run: pnpm install
 
     - name: Build Typebot
-      run: npm run build
+      run: pnpm run build
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
