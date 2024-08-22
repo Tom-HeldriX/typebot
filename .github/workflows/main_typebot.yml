@@ -17,10 +17,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18.x'  # Ensure you're using a compatible Node.js version
-        cache: 'pnpm'
 
     - name: Install pnpm
-      run: npm install -g pnpm@9.5.0  # Ensures pnpm is installed
+      uses: pnpm/action-setup@v2.2.4
+      with:
+        version: 9.5.0  # Ensures pnpm is installed at the correct version
 
     - name: Install dependencies using pnpm
       run: pnpm install
